@@ -1,0 +1,18 @@
+{# tasks/task_details.html #}
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <h1>Task Details view - {{ task.id }}</h1>
+    <p>Title: {{task.title}}</p>
+    <p>Description: {{task.description}}</p>
+    <p>Deadline: {{task.deadline}}</p>
+    <p>Priority: {{task.priority}}</p>
+    <p>Created at: {{task.created_at}}</p>
+
+    <a href=" {% url 'task_edit' task_id=task.id %}">Edit</a>
+    <a href=" {% url 'task_delete' task_id=task.id %}">Delete</a>
+    <a href=" {% url 'task_create'%}">Create</a>
+    <a href=" {% url 'task_list' %}">Task list</a>
+
+{% endblock %}

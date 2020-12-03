@@ -1,0 +1,27 @@
+{# tasks/task_delete.html #}
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <h1>Task Delete view: {{task.title}}</h1>
+    <p>Confirm ... </p>
+
+     <form action="{% url 'task_delete' task_id=task.id %}" method="post" novalidate>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Save"/>
+     </form>
+{% endblock %}{# tasks/task_delete.html #}
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <h1>Task Delete view: {{task.title}}</h1>
+    <p>Confirm ... </p>
+
+     <form action="{% url 'task_delete' task_id=task.id %}" method="post" novalidate>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Save"/>
+     </form>
+{% endblock %}

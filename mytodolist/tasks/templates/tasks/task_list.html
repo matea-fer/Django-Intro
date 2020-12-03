@@ -1,0 +1,14 @@
+{# tasks/task_list.html #}
+{% extends 'tasks/base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <h1>Task List view</h1>
+<ul>
+    {% for task in tasks %}
+    <li><a href="{% url 'task_details' task_id=task.id %}">{{task.title}}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
